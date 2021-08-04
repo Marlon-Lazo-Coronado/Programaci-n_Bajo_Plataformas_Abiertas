@@ -1,0 +1,2 @@
+para instalar el SFML:
+	apt install libcsfml* libsfml* 

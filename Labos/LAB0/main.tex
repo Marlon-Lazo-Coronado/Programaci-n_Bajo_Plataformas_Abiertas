@@ -1,0 +1,321 @@
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+  letterpaper, 
+%   showframes,
+%   vline=2.2em,
+  maincolor=black,
+  sectioncolor=black!90,
+  subsectioncolor=black!70,
+  itemtextcolor=black!40,
+%   sidebarwidth=0.4\paperwidth,
+%   topbottommargin=0.03\paperheight,
+%   leftrightmargin=20pt,
+%   proilepicsize=4.5cm,
+]{fortysecondscv}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{blindtext}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{vwcol} 
+\usepackage{tabulary}
+\usepackage{url}
+\usepackage{float}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+% \newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+% \usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+  % defaut font size is \large, so adjust to harmonize with sidebar layout
+  bubble center node font = \footnotesize,
+  bubble node font = \footnotesize,
+  % default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+  bubble center node size = 0.4\sidebartextwidth,
+  bubble node size = 0.25\sidebartextwidth,
+  distance center/other bubbles = 1.5em,
+  % set center bubble color
+  bubble center node color = maincolor!70,
+  % define the list of colors usable in the diagram
+  set color list = {maincolor!10, maincolor!40,
+  maincolor!20, maincolor!60, maincolor!35},
+  % sets the opacity at which the bubbles are shown
+  bubble fill opacity = 0.8,
+}
+
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%%
+%
+% \cvprofilepic{img/logoUCR.png}
+
+\cvname{\begin{center}\includegraphics[width=0.5\textwidth]{img/logoUCR.png}
+\\\vspace{-0mm}Universidad de\\Costa Rica\end{center}}
+
+\cvjobtitle{\begin{center}\includegraphics[width=0.5\textwidth]{img/logoEIE.png}\\\vspace{-0mm}Escuela de\\Ingeniería Eléctrica\end{center}}
+
+%% optional information
+
+
+% NOTE: ordering in sidebar will mimic the following order
+% date of birth
+% \cvbirthday{\textit{M. Sc.} Ricardo Román-Brenes}
+% short address/location, use \newline if more than 1 line is required
+% \cvaddress{\url{ricardo.roman@ucr.ac.cr}}
+% phone number
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+
+	% social network accounts incl. proper hyperlinks
+	\profilesection{Estudiante}
+		\begin{icontable}{2.5em}{1em}
+		    % overleaf still not supports Academicons and FontAwesome5 for XeLaTeX, which contain the overleaf logl...unbelievable...
+		    %\social{\aiOverleafSquare}
+			\social{\faUser}
+				{}
+				{\textit José Alejandro Castillo Sequeira}
+			\social{\faAt}
+				{}
+				{\url{jose.castillosequeira.ucr.ac.cr}}
+		\end{icontable}
+		
+	\profilesection{Contenido}
+        \tableofcontents
+    
+}
+
+\addtobacksidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+
+	% social network accounts incl. proper hyperlinks
+	\profilesection{Estudiante}
+		\begin{icontable}{2.5em}{1em}
+		    % overleaf still not supports Academicons and FontAwesome5 for XeLaTeX, which contain the overleaf logl...unbelievable...
+		    %\social{\aiOverleafSquare}
+			\social{\faUser}
+				{}
+				{\textit José Alejandro Castillo Sequeira}
+			\social{\faAt}
+				{}
+				{\url{jose.castillosequeira.ucr.ac.cr}}
+		\end{icontable}
+		
+}
+
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+\usepackage{graphicx}
+\usepackage{refstyle}
+\usepackage{caption}
+\setlength{\parskip}{4mm}
+\setlength{\parindent}{12pt}
+
+\makefrontsidebar
+
+
+\cvsection{\Huge \texttt{IE-0117} \textbf{Programación bajo Plataformas Abiertas}}
+\cvsubsection{\Huge Reporte de Laboratorio}
+% \begin{cvtable}[1.5]
+% 	\cvitem{2009 -- 2010}{Post-Doc Panda Studies}{Panda Academy}
+% 		{In-depth studies on the impact of bamboo nutrition for young pandas and
+% 		its relation to relaxing, sleeping and snoozing parts of the day.}
+% 	\cvitem{2008 -- 2009}{Research Stay Europe}{European Panda Labs}
+% 		{Spending one year abroad teaching european panda facilities about the
+% 		newest findings and research in the field of asian rice hat covers and
+% 		applications for bamboo as a material.}
+% \end{cvtable}
+
+% \cvsignature
+
+\newpage
+
+\section{Introducción}
+{\Large
+El sistema operativo es el principal programa que ejecuta en toda computadora de propósito general. Los hay de todo tipo, desde muy simples hasta terriblemente complejos, y entre más casos de uso hay para el cómputo en la vida diaria, más variedad habrá de ellos.Es además el único programa que interactúa directamente con el Hardware de la computadora.-\cite{wolf2015fundamentos}}
+
+{\Large 
+GNU/Linux es un sistema operativo con una amplia difusion, una plataforma para el desarrollo de aplicaciones aceptada mundialmente por usuarios, instituciones y gobiernos para la cual hay disponibles multitud de lenguajes, bibliotecas y herramientas que, en su mayor parte, siguen la filosofia de codigo de uso libre.-\cite{charte2003programacion}}
+
+{\Large 
+Es considerado uno de los más robustos y estables. Estas características que se lo asignan gracias a la gran variedad de opciones de desarrollo; Linux no depende de una compañía de software, este esta regado en todo el mundo y su desarrollo se basa a un sin número de comunidades que diariamente trabajan para su crecimiento.-\cite{badillo2015estudio}}
+
+{\Large 
+La unión de herramientas GNU con el kernel de Linux, es lo que se conoce como GNU/Linux. En este laboratorio, el objetivo fue interiorizar en este sistema operativo, específicamente en la distribución de Linux Mint, basada en Ubuntu.} 
+
+{\Large 
+Se inició por adquirir la imagen ISO de dicho sistema, para posteriormente, mediante una serie de instrucciones, instalarlo en las computadoras del laboratorio.}
+ 
+\newpage
+\section{Glosario}
+\renewcommand{\baselinestretch}{2}
+
+\begin{itemize}
+\item {\Large Sistema Operativo: El sistema operativo es un conjunto de programas base que dirigen y controlan tanto el hardware como el software; es una capa intermedia entre estos dos componentes. -\cite{silva2008debian}}
+
+\item {\Large Software Libre: Es el software que respeta la libertad de los usuarios y la comunidad. En grandes líneas, significa que los usuarios tienen la libertad para ejecutar, copiar, distribuir, estudiar, modificar y mejorar el software. Es decir, el «software libre» es una cuestión de libertad, no de precio.-\cite{badillo2015estudio}}
+
+\item {\Large GNU/Linux: La combinación (o suma) del software GNU y del kernel Linux, es el que nos ha traído a los actuales sistemas GNU/Linux. El software GNU se inició a mediados de los ochenta, el
+kernel Linux, a principios de los noventa.-\cite{jorba2004administracion}}
+
+\item {\Large CPU: La Undiad Central de Procesos (CPU) es la parte fundamental de cualquier sistema basado en microprocesador.Habitualmente se identifica la CPU con el circuito integrado del sistema que realiza tal función, si bien esta puede realizarse por medio de varios circuitos integrados o, como también es frecuente, empleando un único circuito integrado que realiza otras funciones además de las propias de la CPU.-\cite{sanchis2002sistemas}}
+
+\item {\Large RAM:La Memoria de Acceso Aleatorio o Memoria de Acceso Directo (RAM), es la memoria principal del computador. Los programas y datos deben estar cargados en la RAM antes de que el sitema operativo pueda procesarlos.\cite{silva2008debian}}
+
+
+
+
+
+\end{itemize}
+
+\newpage
+\section{Desarrollo}
+{\Large 
+Para empezar con la práctica del laboratorio, se procedió a adquirir la imagen ISO del sistema que se requería instalar. Se utilizó la distribución Linux Mint, en su versión LMDE 3, la cuál fue facilitada por el docente a cargo.}
+
+{\Large 
+Una vez que se contó con dicho archivo, se brindaron las instrucciones necesarias para empezar a instalar el sistema operativo. Se utilizó un computador de la marca HP, y en un inicio se requería ingresar al menú de configuración del BIOS. Para eso, se encendía la maquina, presionando a la vez y de manera constante, la tecla escape.}
+
+{\Large 
+Al ingresar al menú del BIOS, se seleccionó la opción de "Boot Menu", donde hallaríamos la unidad de almacenamiento que contenía el archivo ISO. Para este caso, se escogió la opción identificada como UEFI (Unified Extensible Firmware Interface)}
+
+{\Large 
+Después de esto, el sitema operativo inició, mostrando la interfaz de Linux Mint, tal como se aprecia en la Figura 1.}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{1.png}
+    \caption{Interfaz Linux Mint}
+    \label{fig:1.png}
+    \end{figure}
+\end{center}
+
+{\Large
+A continuación, se seleccionó el ícono del disco para continuar con la configuración e instalación correcta del sistema. Se escogió la opción en idioma Inglés, tanto para el sistema, como para la configuración del teclado. Esto se puede apreciar en las Figuras 2 y 3, respectivamente.}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{2.png}
+    \caption{Idioma del Sistema}
+    \label{fig:2.png}
+    \end{figure}
+\end{center}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{4.png}
+    \caption{Idioma del Teclado}
+    \label{fig:4.png}
+    \end{figure}
+\end{center}
+
+{\Large
+Así mismo, se corrigió la zona horaria por la de "América: Costa Rica" tal como se muestra en la Figura 4.}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{3.png}
+    \caption{Zona Horaria}
+    \label{fig:3.png}
+    \end{figure}
+\end{center}
+
+{\Large
+Una vez hecho lo anterior, se procedió a crear una cuenta de usuario, tal como se muestra en la Figura 5, para luego proceder a configurar y asignar las particiones respectivas de disco duro. Para efectos de este curso, se utiliza el "sda7". Finalmente, la aplicación de instalación brinda un resumen de los ajustes efectuados, para terminar el proceso. Lo anterior se aprecia en las Figuras 6 y 7.}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{7.png}
+    \caption{Cuenta de Usuario}
+    \label{fig:7.png}
+    \end{figure}
+\end{center}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{8.png}
+    \caption{Partición de disco Escogida}
+    \label{fig:8.png}
+    \end{figure}
+\end{center}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{9.png}
+    \caption{Proceso final de Instalación}
+    \label{fig:9.png}
+    \end{figure}
+\end{center}
+
+{\Large
+Por último, para conseguir la información de modelo de CPU, frecuencia de CPU, cantidad de memoria, espacio en Disco Duro, versión de Linux Mint, y versión de Kernel de Linux, bastó con ir al menú, luego a preferencias y finalmente a "System Info". Nos damos cuenta que el modelo del CPU es Intel Core i5 7500, la frecuencia del CPU corresponde a 3.40 GHz x 4, la cantidad de memoria es de 15.6 Gb, el espacio en el Disco es de 108.4 Gb, la verión de Linux Mint corresponde a LMDE 3 Cindy y su versión de Kernel es 4.9.0-7-amd64. Lo anterior se logra apreciar en la Figura 8.}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{10.png}
+    \caption{Información del Sistema}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+\newpage
+\section{Conclusiones}
+
+{\Large 
+Al haber efectuado esta práctica de laboratorio, se crea otra perspectiva de los sistemas operativos, y sobre todo de la distribución Linux Mint de GNU/Linux. 
+Su condición de sistema operativo de código abierto hace posible aprovechar los permanentes avances en software, con programas desarrollados por informáticos en todo el mundo que amplían en forma constante su rango de acción.}
+
+{\Large 
+La primera y más importante diferencia y ventaja al mismo tiempo de Linux en comparación con otros sistemas operativos es su característica de código abierto. Para abreviar, Open Source es una libertad que se refiere al software. La mayoría del software basado en el sistema operativo Linux, o cualquier otro también, tiene un código abierto. Por lo tanto, cualquier usuario independientemente de su conocimiento en este campo puede modernizar fácilmente el software o incluso el núcleo de Linux por lo que es mejor. Además, cualquier usuario puede compartir programas modernizados con toda la comunidad Linux.}
+
+\newpage
+\bibliographystyle{apalike}
+\bibliography{bibliography.bib}
+
+\end{document} 

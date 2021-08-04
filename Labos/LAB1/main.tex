@@ -1,0 +1,621 @@
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+  letterpaper, 
+%   showframes,
+%   vline=2.2em,
+  maincolor=black,
+  sectioncolor=black!90,
+  subsectioncolor=black!70,
+  itemtextcolor=black!40,
+%   sidebarwidth=0.4\paperwidth,
+%   topbottommargin=0.03\paperheight,
+%   leftrightmargin=20pt,
+%   proilepicsize=4.5cm,
+]{fortysecondscv}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage{graphicx}
+\usepackage{refstyle}
+\usepackage{caption}
+\usepackage[USenglish]{babel}
+
+
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{blindtext}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{vwcol} 
+\usepackage{tabulary}
+\usepackage{url}
+\usepackage{float}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+% \newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+% \usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+  % defaut font size is \large, so adjust to harmonize with sidebar layout
+  bubble center node font = \footnotesize,
+  bubble node font = \footnotesize,
+  % default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+  bubble center node size = 0.4\sidebartextwidth,
+  bubble node size = 0.25\sidebartextwidth,
+  distance center/other bubbles = 1.5em,
+  % set center bubble color
+  bubble center node color = maincolor!70,
+  % define the list of colors usable in the diagram
+  set color list = {maincolor!10, maincolor!40,
+  maincolor!20, maincolor!60, maincolor!35},
+  % sets the opacity at which the bubbles are shown
+  bubble fill opacity = 0.8,
+}
+
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%%
+%
+% \cvprofilepic{img/logoUCR.png}
+
+\cvname{\begin{center}\includegraphics[width=0.5\textwidth]{img/logoUCR.png}
+\\\vspace{-0mm}Universidad de\\Costa Rica\end{center}}
+
+\cvjobtitle{\begin{center}\includegraphics[width=0.5\textwidth]{img/logoEIE.png}\\\vspace{-0mm}Escuela de\\Ingeniería Eléctrica\end{center}}
+
+%% optional information
+
+
+% NOTE: ordering in sidebar will mimic the following order
+% date of birth
+% \cvbirthday{\textit{M. Sc.} Ricardo Román-Brenes}
+% short address/location, use \newline if more than 1 line is required
+% \cvaddress{\url{ricardo.roman@ucr.ac.cr}}
+% phone number
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+
+	% social network accounts incl. proper hyperlinks
+	\profilesection{Estudiante}
+		\begin{icontable}{2.5em}{1em}
+		    % overleaf still not supports Academicons and FontAwesome5 for XeLaTeX, which contain the overleaf logl...unbelievable...
+		    %\social{\aiOverleafSquare}
+			\social{\faUser}
+				{}
+				{\textit José Alejandro Castillo Sequeira}
+			\social{\faAt}
+				{}
+				{\url{jose.castillosequeira.ucr.ac.cr}}
+		\end{icontable}
+		
+	\profilesection{Contenido}
+        \tableofcontents
+    
+}
+
+\addtobacksidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+
+	% social network accounts incl. proper hyperlinks
+	\profilesection{Estudiante}
+		\begin{icontable}{2.5em}{1em}
+		    % overleaf still not supports Academicons and FontAwesome5 for XeLaTeX, which contain the overleaf logl...unbelievable...
+		    %\social{\aiOverleafSquare}
+			\social{\faUser}
+				{}
+				{\textit José Alejandro Castillo Sequeira}
+			\social{\faAt}
+				{}
+				{\url{jose.castillosequeira.ucr.ac.cr}}
+		\end{icontable}
+		
+}
+
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+
+\makefrontsidebar
+
+
+\cvsection{\Huge \texttt{IE-0117} \textbf{Programación bajo Plataformas Abiertas}}
+\cvsubsection{\Huge Reporte de Laboratorio}
+% \begin{cvtable}[1.5]
+% 	\cvitem{2009 -- 2010}{Post-Doc Panda Studies}{Panda Academy}
+% 		{In-depth studies on the impact of bamboo nutrition for young pandas and
+% 		its relation to relaxing, sleeping and snoozing parts of the day.}
+% 	\cvitem{2008 -- 2009}{Research Stay Europe}{European Panda Labs}
+% 		{Spending one year abroad teaching european panda facilities about the
+% 		newest findings and research in the field of asian rice hat covers and
+% 		applications for bamboo as a material.}
+% \end{cvtable}
+
+% \cvsignature
+
+
+\newpage
+\section{Desarrollo}
+{En este laboratorio, el objetivo fue interiorizar en el uso de la terminal de GNU/Linux, utilizando una serie de comandos para completar los ejercicios propuestos en el texto facilitado por el docente.}
+
+{Una vez  determinado que se estaba trabajando en modo gráfico, se procedió a iniciar sesión con el usuario creado en la práctica anterior, para dar inicio con los siguientes problemas.}
+
+\subsection{Contraseñas}
+
+{En este apartado se solicitaba cambiar la contraseña del usuario desde la terminal. Para ello, utilizamos el comando "passwd". La nueva contraseña sería "P6p3.aa!" Podemos apreciar lo que sucedió en la Figura 1. }
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{1.png}
+    \caption{Cambiando la contraseña de Usuario}
+    \label{fig:1.png}
+    \end{figure}
+\end{center}
+
+{Seguidamente, se debía repetir el primer paso para dos casos distintos: 1. Ustilizando una contraseña fácil, como "123" y 2. Probando solamente con la tecla "Enter". En primer caso, el sistema notifica que la contraseña debe ser más larga, mientras que en segundo caso, nos dice que no se suministró ninguna contraseña. Podemos evidenciar que pasó en las Figuras 2 y 3 respectivamente.}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{2.png}
+    \caption{Probando contraseña fácil}
+    \label{fig:1.png}
+    \end{figure}
+\end{center}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{3.png}
+    \caption{Probando tecla enter}
+    \label{fig:1.png}
+    \end{figure}
+\end{center}
+
+
+{Después de esto, se solicitaba en la práctica probar el comando "psswd" en lugar de "passwd", para el cual el sistema nos hace saber que no se ha encontrado dicho comando, sugiriendo además que utilicemos "passwd".}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{4.png}
+    \caption{Comandos erróneos}
+    \label{fig:1.png}
+    \end{figure}
+\end{center}
+
+\subsection{Directorios}
+
+{Luego de haber regresado a la contraseña original, se presentan una serie de ejercicios referentes al manejo de directorios. Para empezar, se solicita ustilizar el comando "cd blah", por lo que se muestra en la terminal un mensaje informando que "blah" no es un archivo ni un directorio. Ver Figura 5.}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{5.png}
+    \caption{Manejo de Directorios}
+    \label{fig:2.png}
+    \end{figure}
+\end{center}
+
+{Se pedía después, utilizar los siguientes comandos: 1. "cd ..", 2. "pwd", 3. "ls". En el primer caso se muestra en que directorio estamos trabajando, mientras que en el segundo, se imprime dicho nombre (en este caso, "home"). Por otra parte, con el comando "ls" listamos el contendido del directorio, apreciando el directorio "licit4". Podemos ver lo anterior en las Figuras 6 y 7.}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{6.png}
+    \caption{Uso básico de comandos}
+    \label{fig:4.png}
+    \end{figure}
+\end{center}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{7.png}
+    \caption{Uso básico de comandos}
+    \label{fig:4.png}
+    \end{figure}
+\end{center}
+
+{Posteriormente, utilizando en orden los comandos: "cd", "cd ..", "cd .." y "ls", nos lleva al directorio raíz "/", y nos muestra la lista de directorios y archivos que este contiene. Evidenciamos lo anterior en la Figura 8.}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{8.png}
+    \caption{Contenido del directorio raíz}
+    \label{fig:3.png}
+    \end{figure}
+\end{center}
+
+{Al momento de utilizar el comando "cd root" el sistema nos muestra un mensaje de "Permiso denegado", tal como se aprecia en la Figura 9. Además, luego de repetir este comando para los demás directorios, concluimos que tenemos acceso a los siguientes: bin, etc, opt, run, sys, var, boot, home, lib, media, proc, sbin, dev, lib64, mnt, srv y urs. Otra forma de cambiar de directorios es utilizando el comando "cd" y especificando la ruta del directorio mediante barras inclinadas.}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{9.png}
+    \caption{cd root}
+    \label{fig:3.png}
+    \end{figure}
+\end{center}
+
+\subsection{Archivos}
+
+{Para esta sección se pide ir al directorio raíz, ingresar al directorio etc, y listar su contenido. Las instrucciones piden usar el archivo "inittab" para revolver el problema, sin embargo este no se encuentra. La razón por la que sucede es que /etc/inittab ya no se usa en Ubuntu. Los niveles de ejecución como concepto se han vuelto obsoletos, y no se han utilizado para esto desde hace bastante tiempo. Al Linux Mint estar basada en Ubuntu, sucede lo mismo. Se aprecia lo anterior en la Figura 10.}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{10.png}
+    \caption{Cambio de directorios e inittab}
+    \label{fig:7.png}
+    \end{figure}
+\end{center}
+
+{Al utilizar el comando "file ." en la ubicación de "home" se imprime en la terminal un mensaje de directorio. Además al usar "cat ." se imprime que "." es un directorio.(Ver Figura 11) Para entender mejor el uso del comando "cat" se desplegó información del mismo utilizando el comando "cat --help". (Ver Figura 12) Finalmente, para conocer el número de líneas de salida de /etc/psswd se acudió al comando "cat -n" especificando la ubicación con la que se iba a trabajar. (Ver Figura 13)} 
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{11.png}
+    \caption{file .}
+    \label{fig:8.png}
+    \end{figure}
+\end{center}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{12.png}
+    \caption{cat --help}
+    \label{fig:8.png}
+    \end{figure}
+\end{center}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{13.png}
+    \caption{cat -n}
+    \label{fig:8.png}
+    \end{figure}
+\end{center}
+
+
+\subsection{Obteniendo Ayuda}
+
+{Con esta sección se pretendía interiorizar en el uso de los comandos utilizados en los apartados anteriores, mediante una serie de manuales y opciones de ayuda, que detallan las distintas aplicaciones que se ofrecen.}
+
+{Se solicitaba en la practica introducir los siguientes comandos en la terminal: "man intro", "man ls", "info passwd", "apropos pwd", "man cd" y "ls --help". Para cada uno de ellos podemos observar lo sucedido en las Figuras de la 14 a la 19 respectivamente.}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{14.png}
+    \caption{man intro}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{15.png}
+    \caption{man ls}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{16.png}
+    \caption{info passwd}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{17.png}
+    \caption{apropos pwd}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{18.png}
+    \caption{man cd}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{19.png}
+    \caption{ls --help}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+\subsection{Particiones}
+
+{Primeramente se solicitaba verificar desde la terminal, la partición a la que pertenecía nuestro directorio home, para lo cual se utilizó el comando "df -h", el cual nos mostraba la partición sda7, que además es donde está instalado nuestro sistema operativo. Con ese mismo comando se pudo determinar el tamaño total de nuestra instalación de Linux.(Ver Figura 20)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{20.png}
+    \caption{Terminal del sistema}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+{Posteriormente, se debía determinar el número de particiones que se presentaban en el equipo. Para ello se utilizó el comando "sudo lsblk -fm", donde nos dimos cuenta que eran ocho particiones. (Ver Figura 21)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{21.png}
+    \caption{Particiones del sistema}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+\subsection{Paths}
+{El PATH, es tal vez la variable de entorno más importante. Se encarga de informar al shell (en la mayoría de los casos BASH) dónde se encuentran los programas binarios que puedo ejecutar en el sistema, sin tener que llamarlos por su ruta absoluta).}
+{Se inició por introducir en la terminal el comando "export PATH=blah" para luego listar su contenido. Una vez hecho esto nos damos cuenta mediante un mensaje del sistema que, el archivo no se ha podido encontrar.(Ver Figura 22)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{22.png}
+    \caption{Error Paths}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+{Posteriormente se solicitaba cambiar de directorio a tmp en /var, así como acceder a share en /usr. (Ver Figura 23)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{23.png}
+    \caption{Cambio de directorios}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+
+
+\subsection{Tour del Sistema}
+{Para esta sección se solicitaba primeramente ir al directorio /proc, y por medio de distintos comandos responder preguntas sobre el sistema.}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{24.png}
+    \caption{Directorio /proc}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+{Una vez en el directorio proc, se listó sus archivos y directorios. Utilizando el comando "cat", se buscó el archivo necesario para cada situación.}
+
+{Por ejemplo, para la pregunta 1. ¿Cuál CPU está corriendo el sistema? se usó el comando "cat cpuinfo" donde se llegó a que el CPU es el Intel (R) Core(TM) i5-7500 CPU, modelo 158. (Ver Figura 25)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{25.png}
+    \caption{CPU utilizado}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+{En el caso de la pregunta 2. ¿Cuánta RAM se está usando? se acudió al comando "cat meninfo" donde se llegó a que de la memoria total de 16 GB, se estaban usando 1,8 GB. (Ver Figuras 26)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{26.png}
+    \caption{Memoria RAM}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+{Para la pregunta 3. ¿Cuánta memoria de intercambio posee?, se utilizaron los comandos "cat swaps" y "free -h" dando como respuesta una memoria de 7,9 GB. (Ver Figura 27)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{27.png}
+    \caption{Swap Memory}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+{En la pregunta 4. ¿Cuáles controladores están cargados?, nos dirigimos a la ruta /proc/driver y usamos el comando "cat rtc" donde se nos muestra la lista de controladores. (Ver Figura 28)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{28.png}
+    \caption{Controladores Cargados}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+{En la pregunta 5. ¿Cuántas horas ha estado corriendo el sistema?, regresamos al directorio /proc y aplicamos el comando "cat uptime", así como el comando "uptime" donde se muestra que el tiempo corriendo el sistema ha sido de 24 horas. (Ver Figura 29)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{29.png}
+    \caption{Tiempo de uso del sistema}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+{La respuesta a la pregunta 6. ¿Qué sistemas de archivos conoce su sistema?, la encontramos mediante el comando "cat filesystems". (Ver Figura 30)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{30.png}
+    \caption{Sistemas de Archivos}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+{Para el resto de ejercicios de esta sección, se mostró un problema, pues no se reconocieron los directorios necesarios.}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{31.png}
+    \caption{Directorio no reconocido}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+\subsection{Manipulación de Archivos}
+{Primeramente se solicitaba crear un directorio en nuestra directorio de home. Se le llamó "Lab1". Luego, se debía verificar si este se podía mover al mismo nivel del directorio home. El sistema negó el permiso. (Ver Figura 32)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{32.png}
+    \caption{Creación de Directorio}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+{Una vez que se contó con lo anterior, se solicitaba copiar todos los archivos XPM de la ubicación /usr/share/pixmaps a nuestro nuevo directorio. Para ello se utilizó el siguiente comando "cp *.xpm /home/licit4/Lab1". Podemos apreciar que efectivamente se copiaron en nuestro directorio, yendo a él y listando su contenido. (Ver Figura 33)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{33.png}
+    \caption{Copia de archivos XPM}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+{Para ordenar o listar alfabéticamente de manera inversa usamos "ls -r". (Ver Figura 34)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{34.png}
+    \caption{Listado alfabético inverso}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+{Se solicitaba luego, copiar todos los archivos de /etc, en un nuevo directorio llamdo Lab1.1. Para este caso usamos el comando "cp -r", utilizado para trabajar recursivamente. (Ver Figuras 35 y 36)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{35.png}
+    \caption{Copiar archivos de manera recursiva}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{36.png}
+    \caption{Error por archivos no copiados}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+{Se procedió a separar el contenido de ese directorio en dos nuevos directorios dentro de Lab1.1, dejando en el directorio "Upper" los archivos que comenzaban con mayúscula, y en el directorio "lower" los que comenzaban con minúscula.Para lo anterior se utilizaron los comando "finde ./ -name ´[a-z]*´ -exec mv -t ../lower/ {}+" y "finde ./ -name ´[A-Z]*´ -exec mv -t ../Upper/ {}+" (Ver Figuras 37 y 38)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{37.png}
+    \caption{Directorio Upper}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{38.png}
+    \caption{Directorio lower}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+\subsection{Permiso de Archivos}
+{En esta sección se empieza trabajando con permisos de archivos. La primer pregunta trata sobre cambiar permisos en el directorio /home.}
+´{Para saber más de eso, vamos a utilizar el comando "ls -la" que nos permite ver los permisos para todos los archivos en el directorio en que nos encontramos.(Ver Figura 39)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{39.png}
+    \caption{Permiso de Archivos}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+{Al probar el comando "locate root" se obtiene lo siguiente. (Ver Figura 40)}
+
+\begin{center}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\textwidth]{40.png}
+    \caption{Locate Root}
+    \label{fig:10.png}
+    \end{figure}
+\end{center}
+
+
+\end{document} 

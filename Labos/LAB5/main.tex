@@ -1,0 +1,293 @@
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+  letterpaper, 
+%   showframes,
+%   vline=2.2em,
+  maincolor=black,
+  sectioncolor=black!90,
+  subsectioncolor=black!70,
+  itemtextcolor=black!40,
+%   sidebarwidth=0.4\paperwidth,
+%   topbottommargin=0.03\paperheight,
+%   leftrightmargin=20pt,
+%   proilepicsize=4.5cm,
+]{fortysecondscv}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{blindtext}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{vwcol} 
+\usepackage{tabulary}
+\usepac\usepackage{listings}kage{url}
+\usepackage{float}
+
+
+\usepackage{color}
+
+\definecolor{miverde}{rgb}{0,0.6,0}
+\definecolor{migris}{rgb}{0.5,0.5,0.5}
+\definecolor{mimalva}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % Indica el color de fondo; necesita que se añada \usepackage{color} o \usepackage{xcolor}
+  basicstyle=\footnotesize,        % Fija el tamaño del tipo de letra utilizado para el código
+  breakatwhitespace=false,         % Activarlo para que los saltos automáticos solo se apliquen en los espacios en blanco
+  breaklines=true,                 % Activa el salto de línea automático
+  captionpos=b,                    % Establece la posición de la leyenda del cuadro de código
+  commentstyle=\color{miverde},    % Estilo de los comentarios
+  deletekeywords={...},            % Si se quiere eliminar palabras clave del lenguaje
+  escapeinside={\%*}{*)},          % Si quieres incorporar LaTeX dentro del propio código
+  extendedchars=true,              % Permite utilizar caracteres extendidos no-ASCII; solo funciona para codificaciones de 8-bits; para UTF-8 no funciona. En xelatex necesita estar a true para que funcione.
+  frame=single,	                   % Añade un marco al código
+  keepspaces=true,                 % Mantiene los espacios en el texto. Es útil para mantener la indentación del código(puede necesitar columns=flexible).
+  keywordstyle=\color{blue},       % estilo de las palabras clave
+  language=Pascal,                 % El lenguaje del código
+  otherkeywords={*,...},           % Si se quieren añadir otras palabras clave al lenguaje
+  numbers=left,                    % Posición de los números de línea (none, left, right).
+  numbersep=5pt,                   % Distancia de los números de línea al código
+  numberstyle=\small\color{migris}, % Estilo para los números de línea
+  rulecolor=\color{black},         % Si no se activa, el color del marco puede cambiar en los saltos de línea entre textos que sea de otro color, por ejemplo, los comentarios, que están en verde en este ejemplo
+  showspaces=true,                % Si se activa, muestra los espacios con guiones bajos; sustituye a 'showstringspaces'
+  showstringspaces=false,          % subraya solamente los espacios que estén en una cadena de esto
+  showtabs=true,                  % muestra las tabulaciones que existan en cadenas de texto con guión bajo
+  stepnumber=2,                    % Muestra solamente los números de línea que corresponden a cada salto. En este caso: 1,3,5,...
+  stringstyle=\color{mimalva},     % Estilo de las cadenas de texto
+  tabsize=2,	                   % Establece el salto de las tabulaciones a 2 espacios
+  title=\lstname                   % muestra el nombre de los ficheros incluidos al utilizar \lstinputlisting; también se puede utilizar en el parámetro caption
+}
+
+
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+% \newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+% \usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+  % defaut font size is \large, so adjust to harmonize with sidebar layout
+  bubble center node font = \footnotesize,
+  bubble node font = \footnotesize,
+  % default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+  bubble center node size = 0.4\sidebartextwidth,
+  bubble node size = 0.25\sidebartextwidth,
+  distance center/other bubbles = 1.5em,
+  % set center bubble color
+  bubble center node color = maincolor!70,
+  % define the list of colors usable in the diagram
+  set color list = {maincolor!10, maincolor!40,
+  maincolor!20, maincolor!60, maincolor!35},
+  % sets the opacity at which the bubbles are shown
+  bubble fill opacity = 0.8,
+}
+
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%%
+%
+ %\cvprofilepic{img/logoUCR.png}
+
+\cvname{\begin{center}\includegraphics[width=0.5\textwidth]{img/logoUCR.png}
+\\\vspace{-0mm}Universidad de\\Costa Rica\end{center}}
+
+\cvjobtitle{\begin{center}\includegraphics[width=0.5\textwidth]{img/logoEIE.png}\\\vspace{-0mm}Escuela de\\Ingeniería Eléctrica\end{center}}
+
+%% optional information
+
+
+% NOTE: ordering in sidebar will mimic the following order
+% date of birth
+% \cvbirthday{\textit{M. Sc.} Ricardo Román-Brenes}
+% short address/location, use \newline if more than 1 line is required
+% \cvaddress{\url{ricardo.roman@ucr.ac.cr}}
+% phone number
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+
+	% social network accounts incl. proper hyperlinks
+	\profilesection{Docente}
+		\begin{icontable}{2.5em}{1em}
+		    % overleaf still not supports Academicons and FontAwesome5 for XeLaTeX, which contain the overleaf logl...unbelievable...
+		    %\social{\aiOverleafSquare}
+			\social{\faUser}
+				{}
+				{\textit{M. Sc.} Ricardo Román-Brenes}
+			\social{\faAt}
+				{}
+				{\url{ricardo.roman@ucr.ac.cr}}
+		\end{icontable}
+		
+	\profilesection{Contenido}
+        \tableofcontents
+    
+}
+
+\addtobacksidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+
+	% social network accounts incl. proper hyperlinks
+	\profilesection{Docente}
+		\begin{icontable}{2.5em}{1em}
+		    % overleaf still not supports Academicons and FontAwesome5 for XeLaTeX, which contain the overleaf logl...unbelievable...
+		    %\social{\aiOverleafSquare}
+			\social{\faUser}
+				{}
+				{\textit{M. Sc.} Ricardo Román-Brenes}
+			\social{\faAt}
+				{}
+				{\url{ricardo.roman@ucr.ac.cr}}
+		\end{icontable}
+		
+}
+
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+
+\cvsection{\Huge \texttt{IE-0117} \textbf{Programación bajo plataformas abiertas}}
+\cvsubsection{\Huge }
+\cvsubsection{\Huge Reporte - Laboratorio 5}
+\cvsubsection{\Huge }
+\cvsubsection{\LARGE Ana Chaves Matamoros - B61982}
+\cvsubsection{\LARGE Marlon Lazo Coronado - B4317}
+\cvsubsection{\LARGE Alejandro Castillo Sequeira - B81787 }
+
+
+% \begin{cvtable}[1.5]
+% 	\cvitem{2009 -- 2010}{Post-Doc Panda Studies}{Panda Academy}
+% 		{In-depth studies on the impact of bamboo nutrition for young pandas and
+% 		its relation to relaxing, sleeping and snoozing parts of the day.}
+% 	\cvitem{2008 -- 2009}{Research Stay Europe}{European Panda Labs}
+% 		{Spending one year abroad teaching european panda facilities about the
+% 		newest findings and research in the field of asian rice hat covers and
+% 		applications for bamboo as a material.}
+% \end{cvtable}
+
+% \cvsignature
+
+\newpage
+
+\section{Código}
+
+A continuación se adjuntan los códigos utilizados para abordar la solución del laboratorio presente: 
+
+\lstinputlisting[language=C]{matriz.h}
+\lstinputlisting[language=C]{matriz.c}
+\lstinputlisting[language=C]{main.c}
+
+En los archivos matriz.h y matriz.c se implementaron las operaciones de memoria requeridas. Además, se implementó otra función para poder imprimir matrices de modo que esta facilita el código para probar las funcionalidades. En todas estas funciones la variable N corresponde al número de filas mientras que la variable M corresponde al número de columnas de las matrices. Las matrices se retornan como un puntero doble de tipo float. 
+
+Todas las funciones utilizan una secuencia for para recorrer las matrices y realizar las operaciones deseadas. 
+
+En el archivo main.c se realizaron distintas pruebas para verificar el correcto funcionamiento de las funciones. 
+
+Para crear una matriz se llamó la función correspondiente solicitando 3 filas y 5 columnas. Se llenaron algunos campos y se imprime la matriz para verificar que está se creó de la manera deseada y con los valores dados. 
+
+Para probar la funcionalidad de sumar una matriz y un escalar se utilizó la matriz creada anteriormente y se le puso como parámetro un 4 que debería ser sumado a todos los elementos de la matriz. 
+
+Esta matriz resultante se multiplicó por una constante de 2 para verificar la función de multiplicación de matriz y escalar. Luego, se traspuso la matriz. 
+
+Para verificar la suma de matrices se creó otra matriz denominada C y se sumó con una matriz obtenida anteriormente. Se verifica también que la matriz pone un 0 en todas sus filas y columnas al utilizar la función de limpiar matrices.
+
+Para la multiplicación de matrices se crearon dos pequeñas matrices 2x2 para que sea más fácil de verificar que funciona correctamente. 
+
+Finalmente, se procede a borrar todas las matrices creadas. 
+
+\section{Resultados}
+
+Los resultados obtenidos al ejecutar el programa son los siguientes:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figuras_labo5/1.png}
+	\caption{Resultados}
+	\label{fig:1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figuras_labo5/2.png}
+	\caption{Resultados}
+	\label{fig:2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figuras_labo5/3.png}
+	\caption{Resultados}
+	\label{fig:3}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figuras_labo5/4.png}
+	\caption{Resultados}
+	\label{fig:4}
+\end{figure}
+
+Como se observa en las figuras \ref{fig:1}, \ref{fig:2} y \ref{fig:3} todas las funciones implementadas funcionan correctamente y despliegan los resultados deseados. 
+
+Además, se utilizó el comando valgrind para verificar que se liberara toda la memoria dinámica solicitada. En la figura \ref{fig:4} se muestran los resultados de esta ejecución y se puede ver que en total hay 28 allocs y 28 frees lo cual indica que toda la memoria solicitada fue liberada exitosamente.\\
+
+La mayor dificultad de estos ejercicios reside en crear la matriz de manera dinámica, ya que se debe incluir la funciones tales como “malloc”, “sizeof”, “free” y el dominio de punteros dobles. Una vez reservados los espacios de memoria de la matriz es relativamente sencillo ingresar los datos mediante bucles.\\
+
+Todas la operaciones que se han realizado ha sido manipulando los subíndices, ya que mediante otro bucle se toman los subíndices de las otras matices existentes para generar una nueva o simplemente se le agrega valores o se imprimen en un orden diferente. Se puede decir que el ejercicio de mayor dificultad es el de multiplicar dos matrices de nxm ya que se necesitan tres bucles for para lograr generalizar la operación. \\
+
+
+
+\section{Conclusiones}
+
+En el presente laboratorio se implementaron diferentes operaciones con matrices haciendo uso de la memoria dinámica.\\ 
+
+Al solicitar la memoria mediante el uso de malloc, es muy importante entender el tipo de dato que se va a solicitar y además, para este caso se debe de solicitar varias veces la memoria: un bloque para el puntero de filas y un bloque distinto para cada columna requerida.  \\
+
+La mayoría de ejercicios en este laboratorio se implementaron usando una estructura for que facilita recorrer la matriz y asignar el valor deseado a cada elemento. \\
+
+En este laboratorio se logró un mejor entendimiento y abordaje en el tema de punteros dobles y punteros sencillos, así como en la importancia y gran utilidad que tiene utilizar la memoria dinámica. \\
+
+Es de suma relevancia utilizar el comando valgrind para verificar que se haya borrado toda la memoria solicitada ya que pueden existir fugas si existen problemas en el código.\\
+
+Mediante memoria dinámica podemos cambiar las dimensiones de una arreglo una vez ya creado, no como cuando se utiliza la memoria estática que una vez que se crea un arreglo, es imposible cambiar su tamaño.\\
+
+Mediante el uso de memoria dinámica podemos evitar fugas de memoria y optimizarla al ajustar los arreglos de n dimensiones las veces que se necesite en la ejecución del código.
+
+\end{document} 

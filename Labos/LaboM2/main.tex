@@ -1,0 +1,322 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{wasysym}
+\usepackage {amssymb}
+\renewcommand{\headrulewidth}{0.5pt}
+
+
+\title{Universidad de Costa Rica \\ \vspace{0.5cm}
+Escuela de Ingeniería Eléctrica\\ \vspace{2cm}
+IE-0117 Programación Bajo Plataformas Abiertas\\
+Laboratorio 2: más Linux, usuarios, permisos, credenciales en GNU/Linux\\ \vspace{2cm}
+}
+
+
+\author{Profesor: M. Sc. Ricardo Roman Brenes
+\\\\
+Estudiante: Marlon Javier Lazo Coronado B43717\\ \vspace{1cm}}\\ 
+
+ %Para que no le saalga en ingles el indice
+\def\contentsname{Índice de Contenido} 
+\def\listfigurename{ Índice de Figuras}
+%Aqui termina
+
+
+\begin{document}
+
+\maketitle
+
+
+%Indice de contenido y figuras
+\newpage
+\tableofcontents
+\listoffigures
+\newpage
+%\listoftables
+\newpage
+
+\section{Introducción}
+
+Para este informe de laboratorio no se escribirá mucho sobre los comandos ni de donde se han sacado, sobre algunos conceptos ni se explicará las líneas de comandos realizadas. Se espera que baste con las capturas de pantalla que muestran todos los procedimientos que se han seguido y lo que se ha solicitado en la guia.
+
+
+
+
+\section{Responda las siguientes preguntas sobre el uso de bash}
+
+\begin{itemize}
+    \item Cómo escribir un script de shell que agregará dos números, que se proporcionan como argumento de línea de comando, y si no se dan estos dos números, se muestra un error y su uso
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K1}}
+\caption{}
+\label{fig}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K2}}
+\caption{}
+\label{fig}
+\end{figure}
+
+    \item Escriba la secuencia de comandos para averiguar el número más grande de tres números dados. Los números son suministros como argumento de línea de comando. Error de impresión si no se proporcionan suficientes argumentos.
+
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K4}}
+\caption{}
+\label{fig}
+\end{figure}
+
+Se ha logrado generar un algoritmo que compara los numeros y no muestra el resultado, tambien se ha intentado que imprima si se ha cometido un error de digitacion, para esto se ha utilizado un comando if que engloba todo el algoritmo comparador y como resultado nos imprime un mensaje. SIn embargo ha generado un error que no se ha logrado detectar por lo que no imprime con claridad "Error de digitacion" que es lo que se esperaba.
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K5}}
+\caption{}
+\label{fig}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K6}}
+\caption{}
+\label{fig}
+\end{figure}
+
+    \item Escribir guión para imprimir números como 5,4,3,2,1 usando el ciclo while.
+    
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K7}}
+\caption{}
+\label{fig}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K8}}
+\caption{}
+\label{fig}
+\end{figure}
+
+    \item Escriba la secuencia de comandos, utilizando la declaración de caso para realizar operaciones matemáticas básicas de la siguiente manera
+
+El nombre del script debe ser "calcu", que funciona de la siguiente manera.\\
+
+\$ ./calcu 20 / 3
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K9}}
+\caption{}
+\label{fig}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K10}}
+\caption{}
+\label{fig}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K11}}
+\caption{}
+\label{fig}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K12}}
+\caption{}
+\label{fig}
+\end{figure}
+
+    \item Escribir secuencia de comandos para ver la fecha, hora, nombre de usuario y directorio actual
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K13}}
+\caption{}
+\label{fig}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K14}}
+\caption{}
+\label{fig}
+\end{figure}
+
+    \item Escribir guión para imprimir el número dado en orden inverso, por ejemplo. Si no es 123, debe imprimirse como 321.
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K15}}
+\caption{}
+\label{fig}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K16}}
+\caption{}
+\label{fig}
+\end{figure}
+
+El algoritmo creado es capas de invertir la secuencia de numeros unicamente para numeros mayores a noventa y nueve, y menores que mil. NO se intentara generar un codigo mas general por cuestiones de tiempo. No obstante el codigo creado se puede generalizar con un poco mas de trabajo. A partir de aqui solo hay que imprimir los numeros concatenados.
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K17}}
+\caption{}
+\label{fig}
+\end{figure}
+
+    \item Escriba un guión para imprimir la suma de números dados de todos los dígitos, por ejemplo. Si no es 123, la suma de todos los dígitos será 1 + 2 + 3 = 6.
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K18}}
+\caption{}
+\label{fig}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K19}}
+\caption{}
+\label{fig}
+\end{figure}
+
+Para este codigo utilixamos el codigo anterior, ya que este me determina cada componente del numero, unidades decena y centenas, por lo que solo tomamos estos valores y los sumamos.
+
+    \item Escriba la secuencia de comandos para determinar si el archivo dado existe o no, el nombre del archivo se proporciona como argumento de línea de comando, también verifique si hay suficiente número de argumento de línea de comando.
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K20}}
+\caption{}
+\label{fig}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K21}}
+\caption{}
+\label{fig}
+\end{figure}
+
+Sea logrado crear un codigo que verifica si existe o no un directorio. La siguiente parte del ejercicio no se ha hecho porque no se entiende bien que se esta solicitando.
+
+    \item Escribir script para imprimir contiene el archivo desde el número de línea dado al siguiente número de líneas dado. Por ej. Si llamamos a este script como Q13 y lo ejecutamos como
+
+\$ Q13 5 5 myf
+
+Aquí la impresión contiene el archivo 'myf' desde la línea número 5 hasta la siguiente línea 5 de ese archivo.
+
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K23}}
+\caption{}
+\label{fig}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K22}}
+\caption{}
+\label{fig}
+\end{figure}
+
+este algoritmo solicita ingresar primero el intervalo de lineas y posteriormente el nombre del archivo a leer. Ademas esta basado en el comando set.
+
+    \item Escriba un script llamado sayHello, ingrese este script en su archivo de inicio llamado .bash profile, el script se ejecutará tan pronto como inicie sesión en el sistema e imprima cualquiera de los siguientes mensajes en el cuadro de información usando la utilidad de diálogo, si está instalado en su sistema, Si la utilidad de diálogo no está instalada, utilice la instrucción echo para imprimir el mensaje:\\
+Buenos días\\
+Buenas tardes\\
+Buena noches\\
+Según la hora del sistema.
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K24}}
+\caption{}
+\label{fig}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{K25}}
+\caption{}
+\label{fig}
+\end{figure}
+
+    \item Escriba el script de shell para mostrar varias configuraciones del sistema:
+a) Usuario actualmente registrado y su nombre de usuario
+b) Tu caparazón actual
+c) Su directorio de inicio
+d) Su tipo de sistema operativo
+e) Su configuración de ruta actual
+2f) Su directorio de trabajo actual
+g) Mostrar el número de usuarios registrados actualmente
+h) Acerca de su sistema operativo y versión, número de versión, versión del núcleo
+i) Mostrar todos los shells disponibles
+j) Mostrar la configuración del mouse
+k) Mostrar información de la CPU de la computadora como tipo de procesador, velocidad, etc.
+l) Mostrar información de memoria
+m) Muestra información del disco duro como el tamaño del disco duro, la memoria caché, el modelo, etc.
+n) Sistema de archivos (montado)
+
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.3]{K26}}
+\caption{}
+\label{fig}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.3]{K28}}
+\caption{}
+\label{fig}
+\end{figure}
+
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.6]{K27}}
+\caption{}
+\label{fig}
+\end{figure}
+
+
+
+Investigar comandos y hecharse hablada para camuflar la vara
+
+
+
+
+
+
+
+
+
+
+
+
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

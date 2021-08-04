@@ -1,0 +1,287 @@
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+  letterpaper, 
+%   showframes,
+%   vline=2.2em,
+  maincolor=black,
+  sectioncolor=black!90,
+  subsectioncolor=black!70,
+  itemtextcolor=black!40,
+%   sidebarwidth=0.4\paperwidth,
+%   topbottommargin=0.03\paperheight,
+%   leftrightmargin=20pt,
+%   proilepicsize=4.5cm,
+]{fortysecondscv}
+
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{blindtext}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{vwcol} 
+\usepackage{tabulary}
+\usepackage{listings}
+\usepackage{float}
+
+\usepackage{color}
+
+\definecolor{miverde}{rgb}{0,0.6,0}
+\definecolor{migris}{rgb}{0.5,0.5,0.5}
+\definecolor{mimalva}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % Indica el color de fondo; necesita que se añada \usepackage{color} o \usepackage{xcolor}
+  basicstyle=\footnotesize,        % Fija el tamaño del tipo de letra utilizado para el código
+  breakatwhitespace=false,         % Activarlo para que los saltos automáticos solo se apliquen en los espacios en blanco
+  breaklines=true,                 % Activa el salto de línea automático
+  captionpos=b,                    % Establece la posición de la leyenda del cuadro de código
+  commentstyle=\color{miverde},    % Estilo de los comentarios
+  deletekeywords={...},            % Si se quiere eliminar palabras clave del lenguaje
+  escapeinside={\%*}{*)},          % Si quieres incorporar LaTeX dentro del propio código
+  extendedchars=true,              % Permite utilizar caracteres extendidos no-ASCII; solo funciona para codificaciones de 8-bits; para UTF-8 no funciona. En xelatex necesita estar a true para que funcione.
+  frame=single,	                   % Añade un marco al código
+  keepspaces=true,                 % Mantiene los espacios en el texto. Es útil para mantener la indentación del código(puede necesitar columns=flexible).
+  keywordstyle=\color{blue},       % estilo de las palabras clave
+  language=Pascal,                 % El lenguaje del código
+  otherkeywords={*,...},           % Si se quieren añadir otras palabras clave al lenguaje
+  numbers=left,                    % Posición de los números de línea (none, left, right).
+  numbersep=5pt,                   % Distancia de los números de línea al código
+  numberstyle=\small\color{migris}, % Estilo para los números de línea
+  rulecolor=\color{black},         % Si no se activa, el color del marco puede cambiar en los saltos de línea entre textos que sea de otro color, por ejemplo, los comentarios, que están en verde en este ejemplo
+  showspaces=true,                % Si se activa, muestra los espacios con guiones bajos; sustituye a 'showstringspaces'
+  showstringspaces=false,          % subraya solamente los espacios que estén en una cadena de esto
+  showtabs=true,                  % muestra las tabulaciones que existan en cadenas de texto con guión bajo
+  stepnumber=2,                    % Muestra solamente los números de línea que corresponden a cada salto. En este caso: 1,3,5,...
+  stringstyle=\color{mimalva},     % Estilo de las cadenas de texto
+  tabsize=2,	                   % Establece el salto de las tabulaciones a 2 espacios
+  title=\lstname                   % muestra el nombre de los ficheros incluidos al utilizar \lstinputlisting; también se puede utilizar en el parámetro caption
+}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+% \newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+% \usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+  % defaut font size is \large, so adjust to harmonize with sidebar layout
+  bubble center node font = \footnotesize,
+  bubble node font = \footnotesize,
+  % default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+  bubble center node size = 0.4\sidebartextwidth,
+  bubble node size = 0.25\sidebartextwidth,
+  distance center/other bubbles = 1.5em,
+  % set center bubble color
+  bubble center node color = maincolor!70,
+  % define the list of colors usable in the diagram
+  set color list = {maincolor!10, maincolor!40,
+  maincolor!20, maincolor!60, maincolor!35},
+  % sets the opacity at which the bubbles are shown
+  bubble fill opacity = 0.8,
+}
+
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%%
+%
+ %\cvprofilepic{img/logoUCR.png}
+
+\cvname{\begin{center}\includegraphics[width=0.5\textwidth]{img/logoUCR.png}
+\\\vspace{-0mm}Universidad de\\Costa Rica\end{center}}
+
+\cvjobtitle{\begin{center}\includegraphics[width=0.5\textwidth]{img/logoEIE.png}\\\vspace{-0mm}Escuela de\\Ingeniería Eléctrica\end{center}}
+
+%% optional information
+
+
+% NOTE: ordering in sidebar will mimic the following order
+% date of birth
+% \cvbirthday{\textit{M. Sc.} Ricardo Román-Brenes}
+% short address/location, use \newline if more than 1 line is required
+% \cvaddress{\url{ricardo.roman@ucr.ac.cr}}
+% phone number
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+
+	% social network accounts incl. proper hyperlinks
+	\profilesection{Docente}
+		\begin{icontable}{2.5em}{1em}
+		    % overleaf still not supports Academicons and FontAwesome5 for XeLaTeX, which contain the overleaf logl...unbelievable...
+		    %\social{\aiOverleafSquare}
+			\social{\faUser}
+				{}
+				{\textit{M. Sc.} Ricardo Román-Brenes}
+			\social{\faAt}
+				{}
+				{\url{ricardo.roman@ucr.ac.cr}}
+		\end{icontable}
+		
+	\profilesection{Contenido}
+        \tableofcontents
+    
+}
+
+\addtobacksidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+
+	% social network accounts incl. proper hyperlinks
+	\profilesection{Docente}
+		\begin{icontable}{2.5em}{1em}
+		    % overleaf still not supports Academicons and FontAwesome5 for XeLaTeX, which contain the overleaf logl...unbelievable...
+		    %\social{\aiOverleafSquare}
+			\social{\faUser}
+				{}
+				{\textit{M. Sc.} Ricardo Román-Brenes}
+			\social{\faAt}
+				{}
+				{\url{ricardo.roman@ucr.ac.cr}}
+		\end{icontable}
+		
+}
+
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+
+\cvsection{\Huge \texttt{IE-0117} \textbf{Programación bajo plataformas abiertas}}
+\cvsubsection{\LARGE }
+\cvsubsection{\Huge Reporte - Laboratorio Z} 
+\cvsubsection{\LARGE }
+\cvsubsection{\LARGE }
+\cvsubsection{\LARGE Ana Chaves Matamoros - B61982}
+\cvsubsection{\LARGE Marlon Lazo Coronado - B43717}
+\cvsubsection{\LARGE Alejandro Castillo Sequeira - B81787 }
+
+
+% \begin{cvtable}[1.5]
+% 	\cvitem{2009 -- 2010}{Post-Doc Panda Studies}{Panda Academy}
+% 		{In-depth studies on the impact of bamboo nutrition for young pandas and
+% 		its relation to relaxing, sleeping and snoozing parts of the day.}
+% 	\cvitem{2008 -- 2009}{Research Stay Europe}{European Panda Labs}
+% 		{Spending one year abroad teaching european panda facilities about the
+% 		newest findings and research in the field of asian rice hat covers and
+% 		applications for bamboo as a material.}
+% \end{cvtable}
+
+% \cvsignature
+
+
+
+
+\newpage
+\section{Código}
+
+A continuación se adjuntan los códigos utilizados para abordar la solución del laboratorio presente: 
+
+\lstinputlisting[language=C]{funciones.c}
+
+\lstinputlisting[language=C]{funciones.h}
+
+\lstinputlisting[language=C]{laberinto.txt}
+
+\lstinputlisting[language=C]{main.c}
+
+
+
+
+\section{Resultados}
+
+Al ejecutar el programa, se obtuvieron los siguientes resultados:
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Figuras/1.png}
+	\caption{Recorrido en el Laberinto}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Figuras/2.png}
+	\caption{Recorrido en el Laberinto}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Figuras/3.png}
+	\caption{Recorrido en el Laberinto}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Figuras/4.png}
+	\caption{Recorrido en el Laberinto}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Figuras/5.png}
+	\caption{Recorrido en el Laberinto}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Figuras/6.png}
+	\caption{Recorrido en el Laberinto}
+\end{figure}
+
+Para comenzar a resolver el problema primero se debe lograr que el ratón se pueda desplazar por el laberinto y que pueda terminar al ubicar el queso. Para esto se tuvo que crear una función que recibe como entrada las coordenadas del ratón, posteriormente se necesitan ocho condiciones “if”, cuatro para que el ratón evalúe los cuatro lados por los que se debe desplazar preguntando si hay espacios vacíos, al encontrar el primer espacio vacío asigna esa coordenada al ratón, se deja una marca en la coordenada actual y se hace el llamado recursivo.\\
+
+Las siguientes cuatro condiciones son para evaluar si en alguna de las cuatro coordenadas (x-1), (x+1), (y-1), (y+1) está el queso, de ser así se asigna esa posición al ratón, se deja una marca en la coordenada actual, se pasan las coordenadas encontradas de forma recursiva a la función y se llama una función llamada “exi(-1)” que termina el programa.\\
+
+Un paso importante fue crear la función recursiva dentro de otra función que crea la matriz aparte, ya que al hacer el llamado recursivo se corre el riesgo de volver a crear la matriz, de tal forma que se borra todo lo que crea la función que hace los eventos del laberinto haciendo que se caiga en un ciclo ya que las marcas dejas se borren.\\
+
+
+Como se observa en las figuras anteriores, el programa logró abarcar la solución del problema planteado. El ratón, logra encontrar su objetivo utilizando el algoritmo adecuado, el cual se basa en dejar marcas que le permitan identificar los lugares por los que ya pasó, respetando el siguiente orden de movimientos posibles: arriba, derecha, izquierda y abajo.\\
+
+La matriz fue leída correctamente desde el archivo de texto, y, mediante una serie de condiciones, se establecieron cuales eran los lugares transitables, y cuales no.\\
+
+\section{Conclusiones}
+
+En el presente laboratorio, se implmentaron distintas funciones, con el fin de resolver el laberinto propuesto. Se tomó como base la recursividad, que no es más que la forma en la cual se especifica un proceso basado en su propia definición.\\ 
+
+Al solicitar la memoria mediante el uso de malloc para crear la matriz y el laberinto, es muy importante entender el tipo de dato que se va a solicitar y además, para este caso se debe de solicitar varias veces la memoria: un bloque para el puntero de filas y un bloque distinto para cada columna requerida.  \\
+
+Básicamente, para llevar a cabo este laboratorio, se implementaron estructuras iterativas y selectivas, las cuales  facilitan recorrer la matriz y definir el camino correcto para alcanzar el objetivo. \\
+
+Los métodos recursivos se pueden usar en cualquier situación en la que la solución pueda ser expresada como una sucesión de pasos o transformaciones gobernadas por un conjunto de reglas claramente definidas. En otras palabras, se suele utilizar  para resolver problemas cuya solución se puede hallar resolviendo el mismo problema, pero para un caso de tamaño menor.\\
+
+
+\end{document} 

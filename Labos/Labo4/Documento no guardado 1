@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+int j = 0;
+int i;
+int n;
+int p;
+int s;
+
+int main(){
+
+printf("Ingrese un numero\n");
+scanf("%d\n", &n);
+int Permu[n];
+
+
+
+
+    
+    
+for (i = 0; i<= (n-1); i++){
+Permu[i] = (i+1); 
+//printf("%d", Permu[i]);
+///////////////////////////////////////////////////////////////////////
+    
+p = (Permu[i]^(10*j));
+//printf("%d", Permu[i]); 
+
+s = (p + (Permu[i-1]^(10*(j-1)));
+
+
+printf("%d", s);
+
+j = j++;
+    
+    
+    
+    
+}
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+	return 0;
+}
+
+
